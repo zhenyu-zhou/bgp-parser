@@ -1,0 +1,21 @@
+BGP Parser for CPS514/ECE558
+
+These scripts aim to analyze real-world BGP traces and provide information for statistics.
+
+aspath.py: Extract AS pathes from all BGP table entries. Please run the script with python2.
+
+aspath_py3.py: The python3 version of aspath.py.
+
+infer.py: Infer BGP link relationships with heuristic (Gao’s algorithm).
+
+infer_py3.py: The python3 version of infer.py.
+
+Usage:
+python(3) <script> <input_file>
+
+The result will be written to output files automatically. The output files should have sufficient information for you to get the required statistics.
+
+Tested on OS X El Capitan and Linux 4.15.0.
+
+Hints: Both input and output are large and it takes a while to run the code (~10-20min on my machine). Please be patient.
+
