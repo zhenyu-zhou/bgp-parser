@@ -10,8 +10,8 @@ import subprocess
 import sys
 
 if len(sys.argv) != 2:
-	print("Usage: %s <INPUT_FILE>" % (sys.argv[0]))
-	sys.exit(-1)
+    print("Usage: %s <INPUT_FILE>" % (sys.argv[0]))
+    sys.exit(-1)
 
 cmd = 'bzcat %s' % (sys.argv[1])
 lines = str(subprocess.check_output(cmd, shell=True)).split('\n')
