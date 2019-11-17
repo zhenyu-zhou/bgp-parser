@@ -22,10 +22,12 @@ for l in lines[5:]:
     tokens = re.split(r' [ ]+', l)
     if len(tokens) != 6: continue
     ases = tokens[-1].split(' ')
-    ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
+    ases = [int(a) for a in ases if a.isdigit() and a!='0']
+    # ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
     for i in range(len(ases)-1):
         a1 = ases[i]
         a2 = ases[i+1]
+        if a1 == a2: continue
         if a1 not in neighbor: neighbor[a1] = []
         if a2 not in neighbor: neighbor[a2] = []
         neighbor[a1].append(a2)
@@ -42,7 +44,8 @@ for l in lines[5:]:
     tokens = re.split(r' [ ]+', l)
     if len(tokens) != 6: continue
     ases = tokens[-1].split(' ')
-    ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
+    ases = [int(a) for a in ases if a.isdigit() and a!='0']
+    # ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
     max_degree = -1
 
     idx = -1
@@ -55,6 +58,7 @@ for l in lines[5:]:
     for i in range(idx):
         x = ases[i]
         y = ases[i+1]
+        if x == y: continue
         if x not in transit:
             transit[x] = set()
         if y not in transit[x]:
@@ -62,6 +66,7 @@ for l in lines[5:]:
     for i in range(idx, len(ases)-1):
         x = ases[i+1]
         y = ases[i]
+        if x == y: continue
         if x not in transit:
             transit[x] = set()
         if y not in transit[x]:
