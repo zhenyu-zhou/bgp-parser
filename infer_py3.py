@@ -23,7 +23,6 @@ for l in lines[5:]:
     if len(tokens) != 6: continue
     ases = tokens[-1].split(' ')
     ases = [int(a) for a in ases if a.isdigit() and a!='0']
-    # ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
     for i in range(len(ases)-1):
         a1 = ases[i]
         a2 = ases[i+1]
@@ -45,7 +44,6 @@ for l in lines[5:]:
     if len(tokens) != 6: continue
     ases = tokens[-1].split(' ')
     ases = [int(a) for a in ases if a.isdigit() and a!='0']
-    # ases = list(set([int(a) for a in ases if a.isdigit() and a!='0']))
     max_degree = -1
 
     idx = -1
